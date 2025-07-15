@@ -67,11 +67,11 @@
   <div class="store" id="storeItems"></div>
 
   <div id="cart">
-    <h2>🧺 Aapka Cart</h2>
+    <h2>🧺 Cart</h2>
     <ul id="cartList"></ul>
-    <input type="text" id="customerName" placeholder="Aapka Naam">
-    <input type="text" id="customerAddress" placeholder="Aapka Address">
-    <button id="orderBtn">📦 WhatsApp par Order bhejein</button>
+    <input type="text" id="customerName" placeholder="Name">
+    <input type="text" id="customerAddress" placeholder="Address">
+    <button id="orderBtn">📦 Place Order </button>
   </div>
 
   <script>
@@ -119,14 +119,14 @@
         return;
       }
 
-      let message = `Namaste,\nMujhe ye items chahiye:\n`;
+      let message = `New Order!!`;
       cart.forEach(item => {
         message += `- ${item.name} (₹${item.price})\n`;
       });
-      message += `\nNaam: ${name}\nAddress: ${address}`;
+      message += `\nName: ${name}\nAddress: ${address}`;
 
       const encoded = encodeURIComponent(message);
-      const phone = "919101503060"; // 👈 Apna WhatsApp number daalein
+      const phone = "918447122439"; 
       const url = `https://wa.me/${phone}?text=${encoded}`;
       window.open(url, "_blank");
     });
